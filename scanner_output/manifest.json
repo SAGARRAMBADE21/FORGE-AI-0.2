@@ -1,0 +1,304 @@
+{
+  "project_root": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project",
+  "scan_timestamp": "2025-12-10T20:30:45.536600",
+  "framework": "react",
+  "routes": [],
+  "pages": [],
+  "components": [
+    {
+      "name": "App",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\App.tsx",
+      "line": 11,
+      "type": "function"
+    },
+    {
+      "name": "AddTodo",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\AddTodo.tsx",
+      "line": 9,
+      "type": "function"
+    },
+    {
+      "name": "handleSubmit",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\AddTodo.tsx",
+      "line": 13,
+      "type": "function"
+    },
+    {
+      "name": "TodoItem",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\TodoItem.tsx",
+      "line": 13,
+      "type": "function"
+    },
+    {
+      "name": "TodoList",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\TodoList.tsx",
+      "line": 13,
+      "type": "function"
+    },
+    {
+      "name": "addTodo",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\TodoList.tsx",
+      "line": 20,
+      "type": "function"
+    },
+    {
+      "name": "toggleTodo",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\TodoList.tsx",
+      "line": 29,
+      "type": "function"
+    },
+    {
+      "name": "deleteTodo",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\TodoList.tsx",
+      "line": 37,
+      "type": "function"
+    },
+    {
+      "name": "AlertDialogHeader",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\alert-dialog.tsx",
+      "line": 46,
+      "type": "function"
+    },
+    {
+      "name": "AlertDialogFooter",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\alert-dialog.tsx",
+      "line": 51,
+      "type": "function"
+    },
+    {
+      "name": "Badge",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\badge.tsx",
+      "line": 25,
+      "type": "function"
+    },
+    {
+      "name": "BreadcrumbSeparator",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\breadcrumb.tsx",
+      "line": 62,
+      "type": "function"
+    },
+    {
+      "name": "BreadcrumbEllipsis",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\breadcrumb.tsx",
+      "line": 69,
+      "type": "function"
+    },
+    {
+      "name": "Calendar",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\calendar.tsx",
+      "line": 10,
+      "type": "function"
+    },
+    {
+      "name": "useCarousel",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\carousel.tsx",
+      "line": 31,
+      "type": "function"
+    },
+    {
+      "name": "useChart",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\chart.tsx",
+      "line": 22,
+      "type": "function"
+    },
+    {
+      "name": "getPayloadConfigFromPayload",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\chart.tsx",
+      "line": 278,
+      "type": "function"
+    },
+    {
+      "name": "ChartStyle",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\chart.tsx",
+      "line": 61,
+      "type": "function"
+    },
+    {
+      "name": "CommandDialog",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\command.tsx",
+      "line": 26,
+      "type": "function"
+    },
+    {
+      "name": "CommandShortcut",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\command.tsx",
+      "line": 117,
+      "type": "function"
+    },
+    {
+      "name": "ContextMenuShortcut",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\context-menu.tsx",
+      "line": 157,
+      "type": "function"
+    },
+    {
+      "name": "DialogHeader",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\dialog.tsx",
+      "line": 54,
+      "type": "function"
+    },
+    {
+      "name": "DialogFooter",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\dialog.tsx",
+      "line": 59,
+      "type": "function"
+    },
+    {
+      "name": "Drawer",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\drawer.tsx",
+      "line": 6,
+      "type": "function"
+    },
+    {
+      "name": "DrawerHeader",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\drawer.tsx",
+      "line": 46,
+      "type": "function"
+    },
+    {
+      "name": "DrawerFooter",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\drawer.tsx",
+      "line": 51,
+      "type": "function"
+    },
+    {
+      "name": "DropdownMenuShortcut",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\dropdown-menu.tsx",
+      "line": 158,
+      "type": "function"
+    },
+    {
+      "name": "useFormField",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\form.tsx",
+      "line": 33,
+      "type": "function"
+    },
+    {
+      "name": "MenubarShortcut",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\menubar.tsx",
+      "line": 185,
+      "type": "function"
+    },
+    {
+      "name": "Pagination",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\pagination.tsx",
+      "line": 7,
+      "type": "function"
+    },
+    {
+      "name": "PaginationLink",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\pagination.tsx",
+      "line": 34,
+      "type": "function"
+    },
+    {
+      "name": "PaginationPrevious",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\pagination.tsx",
+      "line": 49,
+      "type": "function"
+    },
+    {
+      "name": "PaginationNext",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\pagination.tsx",
+      "line": 57,
+      "type": "function"
+    },
+    {
+      "name": "PaginationEllipsis",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\pagination.tsx",
+      "line": 65,
+      "type": "function"
+    },
+    {
+      "name": "ResizablePanelGroup",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\resizable.tsx",
+      "line": 6,
+      "type": "function"
+    },
+    {
+      "name": "ResizableHandle",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\resizable.tsx",
+      "line": 15,
+      "type": "function"
+    },
+    {
+      "name": "SheetHeader",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\sheet.tsx",
+      "line": 70,
+      "type": "function"
+    },
+    {
+      "name": "SheetFooter",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\sheet.tsx",
+      "line": 75,
+      "type": "function"
+    },
+    {
+      "name": "useSidebar",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\sidebar.tsx",
+      "line": 34,
+      "type": "function"
+    },
+    {
+      "name": "handleKeyDown",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\sidebar.tsx",
+      "line": 80,
+      "type": "function"
+    },
+    {
+      "name": "Skeleton",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\skeleton.tsx",
+      "line": 3,
+      "type": "function"
+    },
+    {
+      "name": "Toaster",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\sonner.tsx",
+      "line": 6,
+      "type": "function"
+    },
+    {
+      "name": "Toaster",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\toaster.tsx",
+      "line": 4,
+      "type": "function"
+    },
+    {
+      "name": "useIsMobile",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\hooks\\use-mobile.tsx",
+      "line": 5,
+      "type": "function"
+    },
+    {
+      "name": "onChange",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\hooks\\use-mobile.tsx",
+      "line": 10,
+      "type": "function"
+    },
+    {
+      "name": "Index",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\pages\\Index.tsx",
+      "line": 3,
+      "type": "function"
+    },
+    {
+      "name": "NotFound",
+      "file": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\pages\\NotFound.tsx",
+      "line": 4,
+      "type": "function"
+    }
+  ],
+  "api_calls": [],
+  "suggested_backend_endpoints": [],
+  "integration_hints": {
+    "detected_framework": "react",
+    "total_components": 47,
+    "total_routes": 0,
+    "architecture": "React Application"
+  },
+  "file_inventory": {
+    "total_files": 75,
+    "total_size_bytes": 417647,
+    "scan_timestamp": "2025-12-10T20:30:41.019468"
+  }
+}

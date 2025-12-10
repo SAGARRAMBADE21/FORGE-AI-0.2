@@ -1,0 +1,619 @@
+{
+  "file_summaries": [
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\.gitignore",
+      "purpose": "Code file",
+      "key_exports": [],
+      "api_dependencies": [],
+      "framework": null
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\index.html",
+      "purpose": "Code file",
+      "key_exports": [],
+      "api_dependencies": [],
+      "framework": null
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\App.css",
+      "purpose": "using react",
+      "key_exports": [],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\App.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export default App"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\index.css",
+      "purpose": "Code file",
+      "key_exports": [],
+      "api_dependencies": [],
+      "framework": null
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\main.tsx",
+      "purpose": "using react",
+      "key_exports": [],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\AddTodo.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export const AddTodo"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\NavLink.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { NavLink }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\TodoItem.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export const TodoItem"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\TodoList.tsx",
+      "purpose": "Contains 4 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export const TodoList"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\accordion.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\alert-dialog.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  AlertDialog,\n  AlertDialogPortal,\n  AlertDialogOverlay,\n  AlertDialogTrigger,\n  AlertDial"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\alert.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Alert, AlertTitle, AlertDescription }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\aspect-ratio.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { AspectRatio }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\avatar.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Avatar, AvatarImage, AvatarFallback }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\badge.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Badge, badgeVariants }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\breadcrumb.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  Breadcrumb,\n  BreadcrumbList,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbPage,\n  Bre"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\button.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Button, buttonVariants }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\calendar.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using nextjs",
+      "key_exports": [
+        "export { Calendar }"
+      ],
+      "api_dependencies": [],
+      "framework": "nextjs"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\card.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\carousel.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using nextjs",
+      "key_exports": [
+        "export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext }"
+      ],
+      "api_dependencies": [],
+      "framework": "nextjs"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\chart.tsx",
+      "purpose": "Contains 3 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export { ChartContainer, ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent, ChartSt"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\checkbox.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Checkbox }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\collapsible.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Collapsible, CollapsibleTrigger, CollapsibleContent }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\command.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  Command,\n  CommandDialog,\n  CommandInput,\n  CommandList,\n  CommandEmpty,\n  CommandGroup,\n"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\context-menu.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenu"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\dialog.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  Dialog,\n  DialogPortal,\n  DialogOverlay,\n  DialogClose,\n  DialogTrigger,\n  DialogContent,"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\drawer.tsx",
+      "purpose": "Contains 3 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  Drawer,\n  DrawerPortal,\n  DrawerOverlay,\n  DrawerTrigger,\n  DrawerClose,\n  DrawerContent,"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\dropdown-menu.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  DropdownMenu,\n  DropdownMenuTrigger,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  Dropdow"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\form.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export { useFormField, Form, FormItem, FormLabel, FormControl, FormDescription, FormMessage, FormFie"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\hover-card.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { HoverCard, HoverCardTrigger, HoverCardContent }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\input-otp.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\input.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Input }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\label.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Label }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\menubar.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  Menubar,\n  MenubarMenu,\n  MenubarTrigger,\n  MenubarContent,\n  MenubarItem,\n  MenubarSepar"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\navigation-menu.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  navigationMenuTriggerStyle,\n  NavigationMenu,\n  NavigationMenuList,\n  NavigationMenuItem,"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\pagination.tsx",
+      "purpose": "Contains 5 component(s) | exports 1 item(s) | using nextjs",
+      "key_exports": [
+        "export {\n  Pagination,\n  PaginationContent,\n  PaginationEllipsis,\n  PaginationItem,\n  PaginationLink"
+      ],
+      "api_dependencies": [],
+      "framework": "nextjs"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\popover.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Popover, PopoverTrigger, PopoverContent }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\progress.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Progress }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\radio-group.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { RadioGroup, RadioGroupItem }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\resizable.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export { ResizablePanelGroup, ResizablePanel, ResizableHandle }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\scroll-area.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { ScrollArea, ScrollBar }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\select.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  Select,\n  SelectGroup,\n  SelectValue,\n  SelectTrigger,\n  SelectContent,\n  SelectLabel,\n  "
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\separator.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Separator }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\sheet.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  Sheet,\n  SheetClose,\n  SheetContent,\n  SheetDescription,\n  SheetFooter,\n  SheetHeader,\n  "
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\sidebar.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  Sidebar,\n  SidebarContent,\n  SidebarFooter,\n  SidebarGroup,\n  SidebarGroupAction,\n  Sideb"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\skeleton.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Skeleton }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\slider.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Slider }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\sonner.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using nextjs",
+      "key_exports": [
+        "export { Toaster, toast }"
+      ],
+      "api_dependencies": [],
+      "framework": "nextjs"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\switch.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Switch }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\table.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\tabs.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Tabs, TabsList, TabsTrigger, TabsContent }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\textarea.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Textarea }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\toast.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export {\n  type ToastProps,\n  type ToastActionElement,\n  ToastProvider,\n  ToastViewport,\n  Toast,\n  "
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\toaster.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s)",
+      "key_exports": [
+        "export function Toaster"
+      ],
+      "api_dependencies": [],
+      "framework": null
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\toggle-group.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { ToggleGroup, ToggleGroupItem }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\toggle.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Toggle, toggleVariants }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\tooltip.tsx",
+      "purpose": "exports 1 item(s) | using react",
+      "key_exports": [
+        "export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\hooks\\use-mobile.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export function useIsMobile"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\pages\\Index.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s)",
+      "key_exports": [
+        "export default Index"
+      ],
+      "api_dependencies": [],
+      "framework": null
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\pages\\NotFound.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export default NotFound"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    }
+  ],
+  "folder_summaries": [
+    {
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project",
+      "purpose": "Contains 2 file(s)",
+      "file_count": 2,
+      "key_files": [
+        ".gitignore",
+        "index.html"
+      ]
+    },
+    {
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src",
+      "purpose": "Contains 4 file(s) | Framework: react",
+      "file_count": 4,
+      "key_files": [
+        "App.css",
+        "App.tsx",
+        "index.css",
+        "main.tsx"
+      ]
+    },
+    {
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components",
+      "purpose": "Contains 4 file(s) | Framework: react",
+      "file_count": 4,
+      "key_files": [
+        "AddTodo.tsx",
+        "NavLink.tsx",
+        "TodoItem.tsx",
+        "TodoList.tsx"
+      ]
+    },
+    {
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui",
+      "purpose": "Contains 48 file(s) | Framework: react",
+      "file_count": 48,
+      "key_files": [
+        "accordion.tsx",
+        "alert-dialog.tsx",
+        "alert.tsx",
+        "aspect-ratio.tsx",
+        "avatar.tsx"
+      ]
+    },
+    {
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\hooks",
+      "purpose": "Contains 1 file(s) | Framework: react",
+      "file_count": 1,
+      "key_files": [
+        "use-mobile.tsx"
+      ]
+    },
+    {
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\pages",
+      "purpose": "Contains 2 file(s) | Framework: react",
+      "file_count": 2,
+      "key_files": [
+        "Index.tsx",
+        "NotFound.tsx"
+      ]
+    }
+  ],
+  "project_summary": {
+    "project_root": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project",
+    "framework": "react",
+    "architecture": "React Application",
+    "key_components": [
+      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\.gitignore",
+      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\index.html",
+      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\App.css",
+      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\App.tsx",
+      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\index.css"
+    ],
+    "api_endpoints_used": [],
+    "suggested_backend_endpoints": []
+  }
+}

@@ -1,0 +1,60 @@
+# Frontend Scanner Configuration File
+
+# Project paths
+project_root: ./sample-project
+output_dir: ./scan-output
+
+# Embedding configuration
+embedding:
+  provider: local  # Options: 'openai' or 'local'
+  model: sentence-transformers/all-MiniLM-L6-v2
+  dimensions: 384
+  batch_size: 100
+
+# Vector store configuration
+vector_store:
+  backend: chroma  # Options: 'chroma' or 'faiss'
+  persist_directory: ./vector_store
+  collection_name: frontend_code
+
+# Chunking strategy
+chunking:
+  chunk_size: 1000
+  chunk_overlap: 200
+  use_ast_chunking: true
+  min_chunk_size: 100
+
+# Security and privacy
+security:
+  redact_secrets: true
+  redact_patterns:
+    - '(?i)(api[_-]?key|secret|password|token)\s*[:=]\s*["'']?[\w\-]+["'']?'
+    - '(?i)bearer\s+[\w\-\.]+'
+    - 'sk-[a-zA-Z0-9]{20,}'
+    - 'ghp_[a-zA-Z0-9]{36}'
+  exclude_patterns:
+    - 'node_modules/**'
+    - '.git/**'
+    - 'dist/**'
+    - 'build/**'
+    - '*.min.js'
+    - 'coverage/**'
+    - '.next/**'
+    - '__pycache__/**'
+
+# File processing limits
+max_file_size_mb: 10
+
+# Supported file extensions
+supported_extensions:
+  - .js
+  - .jsx
+  - .ts
+  - .tsx
+  - .vue
+  - .svelte
+  - .html
+  - .css
+  - .json
+  - .yaml
+  - .yml

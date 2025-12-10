@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Scanner - Upload & Analyze</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-weight: 700;
+            letter-spacing: -1px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.2) inset;
+            padding: 40px;
+            position: relative;
+            animation: slideUp 0.6s ease-out 0.3s backwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            font-weight: 500;
+        }
+
+        .tab::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .tab:hover {
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .tab:hover::after {
+            width: 80%;
+        }
+
+        .tab.active {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .tab.active::after {
+            width: 100%;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-area::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(0);
+        }
+
+        .upload-area:hover::before {
+            transform: scale(1);
+        }
+
+        .upload-area:hover {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+            border-color: #5568d3;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .upload-area.dragging {
+            background: linear-gradient(135deg, #e8edff 0%, #dce4ff 100%);
+            border-color: #5568d3;
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .upload-area.dragging::before {
+            transform: scale(1.5);
+        }
+
+        .upload-icon {
+            font-size: 4.5em;
+            color: #667eea;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+            display: inline-block;
+            filter: drop-shadow(0 5px 10px rgba(102, 126, 234, 0.3));
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .upload-area:hover .upload-icon {
+            animation: bounceHover 0.6s ease-in-out;
+        }
+
+        @keyframes bounceHover {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-15px) scale(1.1);
+            }
+        }
+
+        .upload-area h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .upload-area p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="number"] {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+        }
+
+        .input-group input[type="text"]:focus,
+        .input-group input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .btn {
+            padding: 16px 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .status-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f0f2f5 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .status-card:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .status-item:last-child {
+            border-bottom: none;
+        }
+
+        .status-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .status-value {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .results.show {
+            display: block;
+        }
+
+        .result-success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+
+        .result-error {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            width: calc(100% - 120px);
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px 0 0 8px;
+            font-size: 1em;
+        }
+
+        .search-box button {
+            width: 120px;
+            padding: 12px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .search-results {
+            margin-top: 20px;
+        }
+
+        .search-result-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .search-result-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .search-result-item:hover {
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            transform: translateX(5px);
+        }
+
+        .search-result-item:hover::before {
+            width: 6px;
+        }
+
+        .search-result-item .file-path {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .search-result-item .content {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .search-result-item .metadata {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-right: 4px solid #764ba2;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            margin: 0 auto 15px;
+            position: relative;
+        }
+
+        .spinner::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            border: 3px solid transparent;
+            border-top: 3px solid #f093fb;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite reverse;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .file-list {
+            margin-top: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .file-item {
+            padding: 5px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Frontend Scanner</h1>
+            <p>Upload and analyze your frontend projects with AI-powered embeddings</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('upload')">📤 Upload Folder</button>
+                <button class="tab" onclick="switchTab('local')">💻 Scan Local Path</button>
+                <button class="tab" onclick="switchTab('search')">🔎 Search Code</button>
+                <button class="tab" onclick="switchTab('status')">📊 Status</button>
+            </div>
+
+            <!-- Upload Tab -->
+            <div id="upload-tab" class="tab-content active">
+                <div class="input-group">
+                    <label for="projectName">Project Name:</label>
+                    <input type="text" id="projectName" placeholder="my-awesome-project" value="uploaded_project">
+                </div>
+
+                <div class="upload-area" id="uploadArea" onclick="document.getElementById('folderInput').click()">
+                    <div class="upload-icon">📁</div>
+                    <h3>Click or drag files/folder/ZIP here</h3>
+                    <p>Upload files, folders, or ZIP archives to scan and analyze</p>
+                    <input type="file" id="folderInput" multiple accept=".zip,.js,.jsx,.ts,.tsx,.html,.css,.json,.md" style="display: none;">
+                </div>
+                
+                <div style="margin-top: 15px; text-align: center;">
+                    <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; color: #667eea;">
+                        <input type="checkbox" id="folderMode" onchange="toggleFolderMode()" style="width: 18px; height: 18px;">
+                        <span>Folder mode (upload entire directory)</span>
+                    </label>
+                </div>
+
+                <div class="file-list" id="fileList" style="display: none;"></div>
+
+                <div style="margin-top: 20px; text-align: center;">
+                    <button class="btn" id="uploadBtn" style="display: none;" onclick="uploadAndScan()">
+                        Start Scanning
+                    </button>
+                </div>
+            </div>
+
+            <!-- Local Path Tab -->
+            <div id="local-tab" class="tab-content">
+                <div class="input-group">
+                    <label for="folderPath">Folder Path:</label>
+                    <input type="text" id="folderPath" placeholder="C:\Users\YourName\Projects\my-frontend-app">
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn" onclick="scanLocal()">Scan Local Folder</button>
+                </div>
+            </div>
+
+            <!-- Search Tab -->
+            <div id="search-tab" class="tab-content">
+                <div class="search-box">
+                    <input type="text" id="searchQuery" placeholder="Search for code patterns, components, functions...">
+                    <button class="btn" onclick="searchCode()">Search</button>
+                </div>
+
+                <div class="input-group">
+                    <label for="numResults">Number of results:</label>
+                    <input type="number" id="numResults" value="5" min="1" max="20">
+                </div>
+
+                <div class="search-results" id="searchResults"></div>
+            </div>
+
+            <!-- Status Tab -->
+            <div id="status-tab" class="tab-content">
+                <div class="status-card" id="statusCard">
+                    <h3 style="margin-bottom: 15px;">Database Status</h3>
+                    <div class="status-item">
+                        <span class="status-label">Connection:</span>
+                        <span class="status-value" id="dbConnection">Checking...</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Total Embeddings:</span>
+                        <span class="status-value" id="embeddingsCount">-</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Status:</span>
+                        <span class="status-value" id="systemStatus">-</span>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn btn-secondary" onclick="refreshStatus()">Refresh Status</button>
+                </div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Processing your project...</p>
+            </div>
+
+            <!-- Results -->
+            <div class="results" id="results"></div>
+        </div>
+    </div>
+
+    <script>
+        let selectedFiles = [];
+
+        // Tab switching
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+            event.target.classList.add('active');
+
+            // Load status when status tab is opened
+            if (tabName === 'status') {
+                loadStatus();
+            }
+        }
+
+        // Toggle folder/file mode
+        function toggleFolderMode() {
+            const folderInput = document.getElementById('folderInput');
+            const folderMode = document.getElementById('folderMode');
+            
+            if (folderMode.checked) {
+                folderInput.setAttribute('webkitdirectory', '');
+                folderInput.setAttribute('directory', '');
+            } else {
+                folderInput.removeAttribute('webkitdirectory');
+                folderInput.removeAttribute('directory');
+            }
+            
+            // Reset selection
+            folderInput.value = '';
+            selectedFiles = [];
+            document.getElementById('fileList').style.display = 'none';
+            document.getElementById('uploadBtn').style.display = 'none';
+        }
+
+        // File upload handling
+        const folderInput = document.getElementById('folderInput');
+        const uploadArea = document.getElementById('uploadArea');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const fileList = document.getElementById('fileList');
+
+        folderInput.addEventListener('change', (e) => {
+            selectedFiles = Array.from(e.target.files);
+            displayFileList();
+            uploadBtn.style.display = 'block';
+        });
+
+        // Drag and drop
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragging');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragging');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragging');
+            
+            const items = e.dataTransfer.items;
+            selectedFiles = [];
+            
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i].webkitGetAsEntry();
+                if (item) {
+                    traverseFileTree(item);
+                }
+            }
+        });
+
+        function traverseFileTree(item, path = '') {
+            if (item.isFile) {
+                item.file((file) => {
+                    selectedFiles.push(file);
+                    displayFileList();
+                });
+            } else if (item.isDirectory) {
+                const dirReader = item.createReader();
+                dirReader.readEntries((entries) => {
+                    entries.forEach((entry) => {
+                        traverseFileTree(entry, path + item.name + '/');
+                    });
+                });
+            }
+        }
+
+        function displayFileList() {
+            if (selectedFiles.length === 0) {
+                fileList.style.display = 'none';
+                return;
+            }
+
+            fileList.style.display = 'block';
+            fileList.innerHTML = `<strong>Selected ${selectedFiles.length} files:</strong><br>`;
+            selectedFiles.slice(0, 10).forEach(file => {
+                fileList.innerHTML += `<div class="file-item">📄 ${file.webkitRelativePath || file.name}</div>`;
+            });
+            
+            if (selectedFiles.length > 10) {
+                fileList.innerHTML += `<div class="file-item">... and ${selectedFiles.length - 10} more files</div>`;
+            }
+        }
+
+        // Upload and scan
+        async function uploadAndScan() {
+            const formData = new FormData();
+            const projectName = document.getElementById('projectName').value;
+
+            selectedFiles.forEach(file => {
+                formData.append('files[]', file, file.webkitRelativePath || file.name);
+            });
+            formData.append('projectName', projectName);
+
+            showLoading(true);
+            hideResults();
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+                showLoading(false);
+                displayResults(result);
+            } catch (error) {
+                showLoading(false);
+                displayResults({ success: false, error: error.message });
+            }
+        }
+
+        // Scan local folder
+        async function scanLocal() {
+            const folderPath = document.getElementById('folderPath').value;
+
+            if (!folderPath) {
+                alert('Please enter a folder path');
+                return;
+            }
+
+            showLoading(true);
+            hideResults();
+
+            try {
+                const response = await fetch('/scan-local', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ folderPath })
+                });
+
+                const result = await response.json();
+                showLoading(false);
+                displayResults(result);
+            } catch (error) {
+                showLoading(false);
+                displayResults({ success: false, error: error.message });
+            }
+        }
+
+        // Search code
+        async function searchCode() {
+            const query = document.getElementById('searchQuery').value;
+            const nResults = parseInt(document.getElementById('numResults').value);
+            const resultsDiv = document.getElementById('searchResults');
+
+            if (!query) {
+                alert('Please enter a search query');
+                return;
+            }
+
+            showLoading(true);
+            resultsDiv.innerHTML = '';
+
+            try {
+                const response = await fetch('/search', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query, n_results: nResults })
+                });
+
+                const result = await response.json();
+                showLoading(false);
+
+                if (result.error) {
+                    resultsDiv.innerHTML = `<div class="result-error">${result.error}</div>`;
+                    return;
+                }
+
+                resultsDiv.innerHTML = `<h3>Found ${result.count} results for "${result.query}"</h3>`;
+                
+                result.results.forEach((item, index) => {
+                    const metadata = item.metadata || {};
+                    resultsDiv.innerHTML += `
+                        <div class="search-result-item">
+                            <div class="file-path">
+                                ${index + 1}. ${metadata.file_path || 'Unknown file'} 
+                                <span style="float: right; color: #999;">Distance: ${item.distance.toFixed(4)}</span>
+                            </div>
+                            <div class="metadata">
+                                Type: ${metadata.chunk_type || 'N/A'} | 
+                                Language: ${metadata.language || 'N/A'} | 
+                                Lines: ${metadata.start_line || 0}-${metadata.end_line || 0}
+                            </div>
+                            <div class="content">${escapeHtml(item.content.substring(0, 300))}${item.content.length > 300 ? '...' : ''}</div>
+                        </div>
+                    `;
+                });
+            } catch (error) {
+                showLoading(false);
+                resultsDiv.innerHTML = `<div class="result-error">Error: ${error.message}</div>`;
+            }
+        }
+
+        // Load status
+        async function loadStatus() {
+            try {
+                const response = await fetch('/status');
+                const result = await response.json();
+
+                document.getElementById('dbConnection').textContent = 
+                    result.database_connected ? '✅ Connected' : '❌ Disconnected';
+                document.getElementById('embeddingsCount').textContent = 
+                    result.embeddings_count || 0;
+                document.getElementById('systemStatus').textContent = 
+                    result.status || 'Unknown';
+            } catch (error) {
+                document.getElementById('dbConnection').textContent = '❌ Error';
+                document.getElementById('systemStatus').textContent = 'Error: ' + error.message;
+            }
+        }
+
+        function refreshStatus() {
+            loadStatus();
+        }
+
+        // Helper functions
+        function showLoading(show) {
+            document.getElementById('loading').classList.toggle('show', show);
+        }
+
+        function hideResults() {
+            document.getElementById('results').classList.remove('show');
+        }
+
+        function displayResults(result) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.classList.add('show');
+
+            if (result.success) {
+                resultsDiv.className = 'results show result-success';
+                resultsDiv.innerHTML = `
+                    <h3>✅ Scan Completed Successfully!</h3>
+                    <div class="status-item">
+                        <span class="status-label">Files Processed:</span>
+                        <span class="status-value">${result.files_processed}</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Chunks Created:</span>
+                        <span class="status-value">${result.chunks_created}</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Embeddings Generated:</span>
+                        <span class="status-value">${result.embeddings_generated}</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Timestamp:</span>
+                        <span class="status-value">${new Date(result.timestamp).toLocaleString()}</span>
+                    </div>
+                `;
+            } else {
+                resultsDiv.className = 'results show result-error';
+                resultsDiv.innerHTML = `
+                    <h3>❌ Scan Failed</h3>
+                    <p><strong>Error:</strong> ${result.error}</p>
+                `;
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Load status on page load
+        window.addEventListener('load', () => {
+            loadStatus();
+        });
+    </script>
+</body>
+</html>
