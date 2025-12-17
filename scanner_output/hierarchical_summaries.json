@@ -1,28 +1,28 @@
 {
   "file_summaries": [
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\.gitignore",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\.gitignore",
       "purpose": "Code file",
       "key_exports": [],
       "api_dependencies": [],
       "framework": null
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\index.html",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\index.html",
       "purpose": "Code file",
       "key_exports": [],
       "api_dependencies": [],
       "framework": null
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\App.css",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\App.css",
       "purpose": "using react",
       "key_exports": [],
       "api_dependencies": [],
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\App.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\App.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export default App"
@@ -31,30 +31,49 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\index.css",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\index.css",
       "purpose": "Code file",
       "key_exports": [],
       "api_dependencies": [],
       "framework": null
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\main.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\main.tsx",
       "purpose": "using react",
       "key_exports": [],
       "api_dependencies": [],
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\AddTodo.tsx",
-      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\Layout.tsx",
+      "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
       "key_exports": [
-        "export const AddTodo"
+        "export function Layout"
       ],
       "api_dependencies": [],
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\NavLink.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\LoadingSpinner.tsx",
+      "purpose": "Contains 2 component(s) | exports 2 item(s) | using react",
+      "key_exports": [
+        "export function LoadingSpinner",
+        "export function PageLoader"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\Navbar.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export function Navbar"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\NavLink.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { NavLink }"
@@ -63,25 +82,16 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\TodoItem.tsx",
-      "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ProductCard.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
       "key_exports": [
-        "export const TodoItem"
+        "export function ProductCard"
       ],
       "api_dependencies": [],
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\TodoList.tsx",
-      "purpose": "Contains 4 component(s) | exports 1 item(s) | using react",
-      "key_exports": [
-        "export const TodoList"
-      ],
-      "api_dependencies": [],
-      "framework": "react"
-    },
-    {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\accordion.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\accordion.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }"
@@ -90,7 +100,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\alert-dialog.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\alert-dialog.tsx",
       "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  AlertDialog,\n  AlertDialogPortal,\n  AlertDialogOverlay,\n  AlertDialogTrigger,\n  AlertDial"
@@ -99,7 +109,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\alert.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\alert.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Alert, AlertTitle, AlertDescription }"
@@ -108,7 +118,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\aspect-ratio.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\aspect-ratio.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { AspectRatio }"
@@ -117,7 +127,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\avatar.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\avatar.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Avatar, AvatarImage, AvatarFallback }"
@@ -126,7 +136,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\badge.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\badge.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export { Badge, badgeVariants }"
@@ -135,7 +145,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\breadcrumb.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\breadcrumb.tsx",
       "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  Breadcrumb,\n  BreadcrumbList,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbPage,\n  Bre"
@@ -144,7 +154,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\button.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\button.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Button, buttonVariants }"
@@ -153,7 +163,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\calendar.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\calendar.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s) | using nextjs",
       "key_exports": [
         "export { Calendar }"
@@ -162,7 +172,7 @@
       "framework": "nextjs"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\card.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\card.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }"
@@ -171,7 +181,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\carousel.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\carousel.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s) | using nextjs",
       "key_exports": [
         "export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext }"
@@ -180,7 +190,7 @@
       "framework": "nextjs"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\chart.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\chart.tsx",
       "purpose": "Contains 3 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export { ChartContainer, ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent, ChartSt"
@@ -189,7 +199,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\checkbox.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\checkbox.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Checkbox }"
@@ -198,7 +208,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\collapsible.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\collapsible.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Collapsible, CollapsibleTrigger, CollapsibleContent }"
@@ -207,7 +217,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\command.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\command.tsx",
       "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  Command,\n  CommandDialog,\n  CommandInput,\n  CommandList,\n  CommandEmpty,\n  CommandGroup,\n"
@@ -216,7 +226,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\context-menu.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\context-menu.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenu"
@@ -225,7 +235,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\dialog.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\dialog.tsx",
       "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  Dialog,\n  DialogPortal,\n  DialogOverlay,\n  DialogClose,\n  DialogTrigger,\n  DialogContent,"
@@ -234,7 +244,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\drawer.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\drawer.tsx",
       "purpose": "Contains 3 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  Drawer,\n  DrawerPortal,\n  DrawerOverlay,\n  DrawerTrigger,\n  DrawerClose,\n  DrawerContent,"
@@ -243,7 +253,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\dropdown-menu.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\dropdown-menu.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  DropdownMenu,\n  DropdownMenuTrigger,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  Dropdow"
@@ -252,7 +262,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\form.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\form.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export { useFormField, Form, FormItem, FormLabel, FormControl, FormDescription, FormMessage, FormFie"
@@ -261,7 +271,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\hover-card.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\hover-card.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { HoverCard, HoverCardTrigger, HoverCardContent }"
@@ -270,7 +280,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\input-otp.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\input-otp.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }"
@@ -279,7 +289,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\input.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\input.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Input }"
@@ -288,7 +298,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\label.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\label.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Label }"
@@ -297,7 +307,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\menubar.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\menubar.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  Menubar,\n  MenubarMenu,\n  MenubarTrigger,\n  MenubarContent,\n  MenubarItem,\n  MenubarSepar"
@@ -306,7 +316,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\navigation-menu.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\navigation-menu.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  navigationMenuTriggerStyle,\n  NavigationMenu,\n  NavigationMenuList,\n  NavigationMenuItem,"
@@ -315,7 +325,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\pagination.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\pagination.tsx",
       "purpose": "Contains 5 component(s) | exports 1 item(s) | using nextjs",
       "key_exports": [
         "export {\n  Pagination,\n  PaginationContent,\n  PaginationEllipsis,\n  PaginationItem,\n  PaginationLink"
@@ -324,7 +334,7 @@
       "framework": "nextjs"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\popover.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\popover.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Popover, PopoverTrigger, PopoverContent }"
@@ -333,7 +343,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\progress.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\progress.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Progress }"
@@ -342,7 +352,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\radio-group.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\radio-group.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { RadioGroup, RadioGroupItem }"
@@ -351,7 +361,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\resizable.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\resizable.tsx",
       "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export { ResizablePanelGroup, ResizablePanel, ResizableHandle }"
@@ -360,7 +370,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\scroll-area.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\scroll-area.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { ScrollArea, ScrollBar }"
@@ -369,7 +379,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\select.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\select.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  Select,\n  SelectGroup,\n  SelectValue,\n  SelectTrigger,\n  SelectContent,\n  SelectLabel,\n  "
@@ -378,7 +388,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\separator.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\separator.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Separator }"
@@ -387,7 +397,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\sheet.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\sheet.tsx",
       "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  Sheet,\n  SheetClose,\n  SheetContent,\n  SheetDescription,\n  SheetFooter,\n  SheetHeader,\n  "
@@ -396,7 +406,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\sidebar.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\sidebar.tsx",
       "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  Sidebar,\n  SidebarContent,\n  SidebarFooter,\n  SidebarGroup,\n  SidebarGroupAction,\n  Sideb"
@@ -405,7 +415,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\skeleton.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\skeleton.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export { Skeleton }"
@@ -414,7 +424,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\slider.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\slider.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Slider }"
@@ -423,7 +433,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\sonner.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\sonner.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s) | using nextjs",
       "key_exports": [
         "export { Toaster, toast }"
@@ -432,7 +442,7 @@
       "framework": "nextjs"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\switch.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\switch.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Switch }"
@@ -441,7 +451,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\table.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\table.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption }"
@@ -450,7 +460,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\tabs.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\tabs.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Tabs, TabsList, TabsTrigger, TabsContent }"
@@ -459,7 +469,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\textarea.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\textarea.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Textarea }"
@@ -468,7 +478,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\toast.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\toast.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export {\n  type ToastProps,\n  type ToastActionElement,\n  ToastProvider,\n  ToastViewport,\n  Toast,\n  "
@@ -477,7 +487,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\toaster.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\toaster.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s)",
       "key_exports": [
         "export function Toaster"
@@ -486,7 +496,7 @@
       "framework": null
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\toggle-group.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\toggle-group.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { ToggleGroup, ToggleGroupItem }"
@@ -495,7 +505,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\toggle.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\toggle.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Toggle, toggleVariants }"
@@ -504,7 +514,7 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui\\tooltip.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui\\tooltip.tsx",
       "purpose": "exports 1 item(s) | using react",
       "key_exports": [
         "export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }"
@@ -513,7 +523,27 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\hooks\\use-mobile.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\contexts\\AuthContext.tsx",
+      "purpose": "Contains 3 component(s) | exports 2 item(s) | using react",
+      "key_exports": [
+        "export function AuthProvider",
+        "export function useAuth"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\contexts\\CartContext.tsx",
+      "purpose": "Contains 6 component(s) | exports 2 item(s) | using react",
+      "key_exports": [
+        "export function CartProvider",
+        "export function useCart"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\hooks\\use-mobile.tsx",
       "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export function useIsMobile"
@@ -522,19 +552,82 @@
       "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\pages\\Index.tsx",
-      "purpose": "Contains 1 component(s) | exports 1 item(s)",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\pages\\Cart.tsx",
+      "purpose": "Contains 3 component(s) | exports 1 item(s) | using react",
       "key_exports": [
-        "export default Index"
+        "export default function"
       ],
       "api_dependencies": [],
-      "framework": null
+      "framework": "react"
     },
     {
-      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\pages\\NotFound.tsx",
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\pages\\Checkout.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export default function"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\pages\\Index.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export default function"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\pages\\Login.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export default function"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\pages\\NotFound.tsx",
       "purpose": "Contains 1 component(s) | exports 1 item(s) | using react",
       "key_exports": [
         "export default NotFound"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\pages\\Orders.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export default function"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\pages\\ProductDetail.tsx",
+      "purpose": "Contains 3 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export default function"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\pages\\Products.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export default function"
+      ],
+      "api_dependencies": [],
+      "framework": "react"
+    },
+    {
+      "file_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\pages\\Register.tsx",
+      "purpose": "Contains 2 component(s) | exports 1 item(s) | using react",
+      "key_exports": [
+        "export default function"
       ],
       "api_dependencies": [],
       "framework": "react"
@@ -542,7 +635,7 @@
   ],
   "folder_summaries": [
     {
-      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project",
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project",
       "purpose": "Contains 2 file(s)",
       "file_count": 2,
       "key_files": [
@@ -551,7 +644,7 @@
       ]
     },
     {
-      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src",
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src",
       "purpose": "Contains 4 file(s) | Framework: react",
       "file_count": 4,
       "key_files": [
@@ -562,18 +655,19 @@
       ]
     },
     {
-      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components",
-      "purpose": "Contains 4 file(s) | Framework: react",
-      "file_count": 4,
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components",
+      "purpose": "Contains 5 file(s) | Framework: react",
+      "file_count": 5,
       "key_files": [
-        "AddTodo.tsx",
+        "Layout.tsx",
+        "LoadingSpinner.tsx",
+        "Navbar.tsx",
         "NavLink.tsx",
-        "TodoItem.tsx",
-        "TodoList.tsx"
+        "ProductCard.tsx"
       ]
     },
     {
-      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\components\\ui",
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\components\\ui",
       "purpose": "Contains 48 file(s) | Framework: react",
       "file_count": 48,
       "key_files": [
@@ -585,7 +679,16 @@
       ]
     },
     {
-      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\hooks",
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\contexts",
+      "purpose": "Contains 2 file(s) | Framework: react",
+      "file_count": 2,
+      "key_files": [
+        "AuthContext.tsx",
+        "CartContext.tsx"
+      ]
+    },
+    {
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\hooks",
       "purpose": "Contains 1 file(s) | Framework: react",
       "file_count": 1,
       "key_files": [
@@ -593,25 +696,28 @@
       ]
     },
     {
-      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\pages",
-      "purpose": "Contains 2 file(s) | Framework: react",
-      "file_count": 2,
+      "folder_path": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\pages",
+      "purpose": "Contains 9 file(s) | Framework: react",
+      "file_count": 9,
       "key_files": [
+        "Cart.tsx",
+        "Checkout.tsx",
         "Index.tsx",
+        "Login.tsx",
         "NotFound.tsx"
       ]
     }
   ],
   "project_summary": {
-    "project_root": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project",
+    "project_root": "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project",
     "framework": "react",
     "architecture": "React Application",
     "key_components": [
-      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\.gitignore",
-      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\index.html",
-      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\App.css",
-      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\App.tsx",
-      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmpus7aiuej\\uploaded_project\\src\\index.css"
+      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\.gitignore",
+      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\index.html",
+      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\App.css",
+      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\App.tsx",
+      "C:\\Users\\SAGAR\\AppData\\Local\\Temp\\tmplkpv0egt\\frontend-project\\src\\index.css"
     ],
     "api_endpoints_used": [],
     "suggested_backend_endpoints": []

@@ -49,8 +49,22 @@ async def root():
 async def scan_project(request: ScanRequest):
     """Start a scan of a frontend project."""
     try:
+        # Validate path exists
+        project_path = Path(request.path)
+        if not project_path.exists():
+            raise HTTPException(
+                status_code=400, 
+                detail=f"Project path does not exist: {request.path}"
+            )
+        
+        if not project_path.is_dir():
+            raise HTTPException(
+                status_code=400, 
+                detail=f"Path is not a directory: {request.path}"
+            )
+        
         config = ScannerConfig(
-            project_root=Path(request.path),
+            project_root=project_path,
             output_dir=Path(request.output_dir)
         )
         
@@ -76,22 +90,35 @@ async def scan_project(request: ScanRequest):
             "logs": result.get("logs", [])
         })
     
+    except HTTPException:
+        raise
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.get("/manifest")
 async def get_manifest(output_dir: str = "./scan-output"):
     """Get the manifest.json from a completed scan."""
-    manifest_path = Path(output_dir) / "manifest.json"
+    try:
+        manifest_path = Path(output_dir) / "manifest.json"
+        
+        if not manifest_path.exists():
+            raise HTTPException(
+                status_code=404, 
+                detail=f"Manifest not found at {manifest_path}"
+            )
+        
+        with open(manifest_path, 'r', encoding='utf-8') as f:
+            manifest = json.load(f)
+        
+        return JSONResponse(manifest)
     
-    if not manifest_path.exists():
-        raise HTTPException(status_code=404, detail="Manifest not found")
-    
-    with open(manifest_path, 'r') as f:
-        manifest = json.load(f)
-    
-    return JSONResponse(manifest)
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error reading manifest: {str(e)}")
 
 
 @app.post("/query")
@@ -106,10 +133,23 @@ async def semantic_query(request: QueryRequest):
         
         vector_store = VectorStoreFactory.create(config)
         
-        # Get query embedding
-        from langchain_openai import OpenAIEmbeddings
-        embedder = OpenAIEmbeddings()
-        query_embedding = embedder.embed_query(request.query)
+        # Get query embedding based on configured provider
+        try:
+            if config.embedding.provider == "openai":
+                from langchain_openai import OpenAIEmbeddings
+                embedder = OpenAIEmbeddings()
+            else:
+                from langchain_community.embeddings import HuggingFaceEmbeddings
+                embedder = HuggingFaceEmbeddings(
+                    model_name=config.embedding.model
+                )
+            
+            query_embedding = embedder.embed_query(request.query)
+        except ImportError as ie:
+            raise HTTPException(
+                status_code=500, 
+                detail=f"Embedding provider not available: {str(ie)}"
+            )
         
         # Search
         results = vector_store.query(
@@ -123,6 +163,8 @@ async def semantic_query(request: QueryRequest):
             "results": results
         })
     
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -130,20 +172,28 @@ async def semantic_query(request: QueryRequest):
 @app.get("/file/{path:path}/ast")
 async def get_file_ast(path: str, output_dir: str = "./scan-output"):
     """Get AST summary for a specific file."""
-    summaries_path = Path(output_dir) / "hierarchical_summaries.json"
+    try:
+        summaries_path = Path(output_dir) / "hierarchical_summaries.json"
+        
+        if not summaries_path.exists():
+            raise HTTPException(status_code=404, detail="Summaries not found")
+        
+        with open(summaries_path, 'r', encoding='utf-8') as f:
+            summaries = json.load(f)
+        
+        # Find file summary
+        file_summaries = summaries.get("file_summaries", [])
+        
+        for file_summary in file_summaries:
+            if path in file_summary.get("file_path", ""):
+                return JSONResponse(file_summary)
+        
+        raise HTTPException(status_code=404, detail=f"File '{path}' not found in summaries")
     
-    if not summaries_path.exists():
-        raise HTTPException(status_code=404, detail="Summaries not found")
-    
-    with open(summaries_path, 'r') as f:
-        summaries = json.load(f)
-    
-    # Find file summary
-    for file_summary in summaries.get("file_summaries", []):
-        if path in file_summary.get("file_path", ""):
-            return JSONResponse(file_summary)
-    
-    raise HTTPException(status_code=404, detail="File not found")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error reading file AST: {str(e)}")
 
 
 if __name__ == "__main__":

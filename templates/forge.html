@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORGE AI - Full Stack Generator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .step {
+            margin-bottom: 30px;
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .step-title {
+            font-size: 1.5em;
+            color: #333;
+        }
+        
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            padding: 50px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #f8f9ff;
+        }
+        
+        .upload-area:hover {
+            background: #f0f4ff;
+            border-color: #5568d3;
+            transform: translateY(-5px);
+        }
+        
+        .upload-icon {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            margin: 10px 5px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .btn-success { background: linear-gradient(135deg, #28a745, #20c997); }
+        .btn-secondary { background: linear-gradient(135deg, #6c757d, #495057); }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        
+        .input-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .status-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .status-item:last-child { border-bottom: none; }
+        
+        .status-label { font-weight: 600; color: #555; }
+        .status-value { color: #667eea; font-weight: 600; }
+        
+        .result {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .result.show { display: block; }
+        .result-success { background: #d4edda; border-left: 4px solid #28a745; }
+        .result-error { background: #f8d7da; border-left: 4px solid #dc3545; }
+        
+        .progress {
+            display: none;
+            margin-top: 15px;
+        }
+        
+        .progress.show { display: block; }
+        
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0;
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .file-list {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .file-item {
+            padding: 5px 10px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.9em;
+        }
+        
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 FORGE AI</h1>
+            <p>Full Stack Generator - Scan Frontend → Generate Backend</p>
+        </div>
+        
+        <!-- STEP 1: Upload Frontend -->
+        <div class="card">
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Upload Frontend Project</div>
+                </div>
+                
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <h3>Drop your frontend project here</h3>
+                    <p>or click to browse files/folder</p>
+                    <input type="file" id="fileInput" webkitdirectory directory multiple style="display:none;">
+                    <input type="file" id="zipInput" accept=".zip" style="display:none;">
+                </div>
+                
+                <div style="text-align:center; margin-top:10px;">
+                    <button class="btn" onclick="document.getElementById('fileInput').click()" style="margin:5px; background:#4CAF50;">
+                        📂 Select Folder
+                    </button>
+                    <button class="btn" onclick="document.getElementById('zipInput').click()" style="margin:5px; background:#2196F3;">
+                        📦 Upload ZIP (Recommended for large projects)
+                    </button>
+                </div>
+                
+                <div class="file-list hidden" id="fileList"></div>
+                
+                <div class="input-group" style="margin-top:20px;">
+                    <label>Project Name</label>
+                    <input type="text" id="projectName" placeholder="my-react-app" value="frontend-project">
+                </div>
+                
+                <button class="btn" id="scanBtn" disabled>
+                    Scan Frontend
+                </button>
+                
+                <div class="progress" id="scanProgress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="scanProgressFill">0%</div>
+                    </div>
+                </div>
+                
+                <div class="result" id="scanResult"></div>
+                
+                <div class="status-card hidden" id="scanStatus">
+                    <h3 style="margin-bottom:15px;">📊 Scan Results</h3>
+                    <div class="status-item">
+                        <span class="status-label">Framework</span>
+                        <span class="status-value" id="framework">-</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Files Processed</span>
+                        <span class="status-value" id="filesCount">0</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Components</span>
+                        <span class="status-value" id="componentsCount">0</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Routes</span>
+                        <span class="status-value" id="routesCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- STEP 2: Generate Backend -->
+        <div class="card hidden" id="backendCard">
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Generate Backend</div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Backend Requirements</label>
+                    <textarea id="requirements" placeholder="Describe what you need in the backend...">Create a complete REST API backend with user authentication, CRUD operations for all data models, input validation, and comprehensive error handling.</textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label>Output Directory</label>
+                    <input type="text" id="outputDir" value="./generated-backend">
+                </div>
+                
+                <button class="btn btn-success" id="generateBtn">
+                    ⚙️ Generate Backend
+                </button>
+                
+                <div class="progress" id="generateProgress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="generateProgressFill">0%</div>
+                    </div>
+                </div>
+                
+                <div class="result" id="generateResult"></div>
+                
+                <div class="status-card hidden" id="generateStatus">
+                    <h3 style="margin-bottom:15px;">✅ Backend Generated</h3>
+                    <div class="status-item">
+                        <span class="status-label">Language</span>
+                        <span class="status-value" id="backendLanguage">-</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Framework</span>
+                        <span class="status-value" id="backendFramework">-</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Database</span>
+                        <span class="status-value" id="backendDatabase">-</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Files Generated</span>
+                        <span class="status-value" id="filesGenerated">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let selectedFiles = [];
+        let manifestPath = null;
+        
+        // Upload area handlers
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const fileList = document.getElementById('fileList');
+        const scanBtn = document.getElementById('scanBtn');
+        
+        uploadArea.addEventListener('click', () => fileInput.click());
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.background = '#e8edff';
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.background = '#f8f9ff';
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.background = '#f8f9ff';
+            handleFiles(e.dataTransfer.files);
+        });
+        
+        fileInput.addEventListener('change', (e) => {
+            handleFiles(e.target.files);
+        });
+        
+        zipInput.addEventListener('change', (e) => {
+            handleFiles(e.target.files);
+        });
+        
+        function handleFiles(files) {
+            selectedFiles = Array.from(files);
+            displayFiles();
+            scanBtn.disabled = false;
+        }
+        
+        function displayFiles() {
+            fileList.classList.remove('hidden');
+            fileList.innerHTML = '<strong>Selected Files:</strong><br>';
+            selectedFiles.slice(0, 20).forEach(file => {
+                const div = document.createElement('div');
+                div.className = 'file-item';
+                div.textContent = file.webkitRelativePath || file.name;
+                fileList.appendChild(div);
+            });
+            if (selectedFiles.length > 20) {
+                const div = document.createElement('div');
+                div.className = 'file-item';
+                div.textContent = `... and ${selectedFiles.length - 20} more files`;
+                fileList.appendChild(div);
+            }
+        }
+        
+        // Scan frontend
+        scanBtn.addEventListener('click', async () => {
+            // Check file count
+            if (selectedFiles.length > 1000) {
+                if (!confirm(`You're uploading ${selectedFiles.length} files. This might take a while. Continue?`)) {
+                    return;
+                }
+            }
+            
+            const formData = new FormData();
+            const projectName = document.getElementById('projectName').value || 'frontend-project';
+            formData.append('projectName', projectName);
+            
+            // Add files
+            console.log(`Preparing to upload ${selectedFiles.length} files...`);
+            selectedFiles.forEach((file, index) => {
+                formData.append('files[]', file, file.webkitRelativePath || file.name);
+                if (index % 100 === 0) {
+                    console.log(`Added ${index + 1}/${selectedFiles.length} files to form`);
+                }
+            });
+            
+            scanBtn.disabled = true;
+            document.getElementById('scanProgress').classList.add('show');
+            document.getElementById('scanProgressFill').style.width = '50%';
+            document.getElementById('scanProgressFill').textContent = '50%';
+            
+            console.log('Starting upload...');
+            
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                // Check if response is ok
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                }
+                
+                // Check if response is JSON
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    const text = await response.text();
+                    console.error('Non-JSON response:', text.substring(0, 500));
+                    throw new Error('Server returned non-JSON response. Check console for details.');
+                }
+                
+                const result = await response.json();
+                
+                document.getElementById('scanProgressFill').style.width = '100%';
+                document.getElementById('scanProgressFill').textContent = '100%';
+                
+                if (result.success) {
+                    showResult('scanResult', 'Success! Frontend scanned.', 'success');
+                    document.getElementById('scanStatus').classList.remove('hidden');
+                    document.getElementById('framework').textContent = result.framework || 'unknown';
+                    document.getElementById('filesCount').textContent = result.files_processed || 0;
+                    document.getElementById('componentsCount').textContent = result.components || 0;
+                    document.getElementById('routesCount').textContent = result.routes || 0;
+                    
+                    manifestPath = './scanner_output/manifest.json';
+                    document.getElementById('backendCard').classList.remove('hidden');
+                } else {
+                    showResult('scanResult', 'Error: ' + (result.error || 'Unknown error'), 'error');
+                }
+            } catch (error) {
+                console.error('Scan error:', error);
+                showResult('scanResult', 'Error: ' + error.message, 'error');
+            } finally {
+                scanBtn.disabled = false;
+            }
+        });
+        
+        // Generate backend
+        document.getElementById('generateBtn').addEventListener('click', async () => {
+            const requirements = document.getElementById('requirements').value;
+            const outputDir = document.getElementById('outputDir').value;
+            
+            document.getElementById('generateBtn').disabled = true;
+            document.getElementById('generateProgress').classList.add('show');
+            document.getElementById('generateProgressFill').style.width = '50%';
+            document.getElementById('generateProgressFill').textContent = '50%';
+            
+            try {
+                const response = await fetch('/generate-backend', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        manifest_path: manifestPath,
+                        requirements: requirements,
+                        output_dir: outputDir
+                    })
+                });
+                
+                const result = await response.json();
+                
+                document.getElementById('generateProgressFill').style.width = '100%';
+                document.getElementById('generateProgressFill').textContent = '100%';
+                
+                if (result.success) {
+                    showResult('generateResult', 'Success! Backend generated at ' + result.output_dir, 'success');
+                    document.getElementById('generateStatus').classList.remove('hidden');
+                    document.getElementById('backendLanguage').textContent = result.stack.language || 'N/A';
+                    document.getElementById('backendFramework').textContent = result.stack.framework || 'N/A';
+                    document.getElementById('backendDatabase').textContent = result.stack.database || 'N/A';
+                    document.getElementById('filesGenerated').textContent = result.files_generated || 0;
+                } else {
+                    showResult('generateResult', 'Error: ' + (result.error || result.message || 'Unknown error'), 'error');
+                }
+            } catch (error) {
+                showResult('generateResult', 'Error: ' + error.message, 'error');
+            } finally {
+                document.getElementById('generateBtn').disabled = false;
+            }
+        });
+        
+        function showResult(elementId, message, type) {
+            const result = document.getElementById(elementId);
+            result.textContent = message;
+            result.className = 'result show result-' + type;
+        }
+    </script>
+</body>
+</html>

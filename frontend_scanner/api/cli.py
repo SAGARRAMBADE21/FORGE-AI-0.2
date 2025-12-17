@@ -90,25 +90,26 @@ def main(path, out, config, incremental):
             results_table.add_column("Metric", style="cyan")
             results_table.add_column("Value", style="white")
             
+            file_inventory = getattr(manifest, 'file_inventory', {}) or {}
             results_table.add_row(
                 "Total Files",
-                str(manifest.file_inventory.get("total_files", 0))
+                str(file_inventory.get("total_files", 0) if isinstance(file_inventory, dict) else 0)
             )
             results_table.add_row(
                 "Framework",
-                manifest.framework or "Unknown"
+                getattr(manifest, 'framework', None) or "Unknown"
             )
             results_table.add_row(
                 "Routes",
-                str(len(manifest.routes))
+                str(len(getattr(manifest, 'routes', []) or []))
             )
             results_table.add_row(
                 "Components",
-                str(len(manifest.components))
+                str(len(getattr(manifest, 'components', []) or []))
             )
             results_table.add_row(
                 "API Calls",
-                str(len(manifest.api_calls))
+                str(len(getattr(manifest, 'api_calls', []) or []))
             )
             
             console.print(results_table)

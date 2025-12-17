@@ -1,0 +1,64 @@
+# Backend Agent Configuration
+
+# Project settings
+project:
+  name: "generated-backend"
+  output_dir: "./generated-backend"
+  
+# Tech stack selection
+stack:
+  language: "auto"  # "node", "python", or "auto" (agent decides)
+  framework: "auto"  # "express", "fastapi", "nestjs", "django", or "auto"
+  database: "auto"  # "postgresql", "mysql", "mongodb", "sqlite", or "auto"
+  orm: "auto"  # "sequelize", "prisma", "typeorm", "sqlalchemy", "mongoose", or "auto"
+
+# Architecture
+architecture:
+  style: "monolith"  # "monolith" or "microservices"
+  api_style: "rest"  # "rest", "graphql", or "both"
+  
+# Database settings
+database:
+  migrations: true
+  seeding: true
+  connection_pooling: true
+  
+# Authentication
+auth:
+  enabled: true
+  method: "jwt"  # "jwt", "oauth2", "session"
+  providers: []  # ["google", "github", "facebook"]
+  
+# Features
+features:
+  ml_integration: false
+  external_services: []
+  message_queue: false  # Redis, RabbitMQ
+  caching: true
+  rate_limiting: true
+  
+# Code generation
+generation:
+  include_comments: true
+  include_tests: true
+  include_docs: true
+  code_style: "prettier"  # "prettier", "eslint", "black"
+  
+# Deployment
+deployment:
+  docker: true
+  ci_cd: "github_actions"  # "github_actions", "gitlab_ci", "jenkins"
+  environment: "development"  # "development", "staging", "production"
+  
+# LLM settings
+llm:
+  provider: "groq"  # Current: groq, Future: openai
+  model: "llama-3.3-70b-versatile"  # Groq model
+  openai_model: "gpt-4o-mini"  # OpenAI model (for future use)
+  temperature: 0.1
+  
+# Logging
+logging:
+  level: "INFO"
+  structured: true
+  format: "json"

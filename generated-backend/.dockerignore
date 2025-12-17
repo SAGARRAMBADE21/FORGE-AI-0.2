@@ -1,0 +1,43 @@
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+dist
+build
+
+# Virtual environment
+venv
+env
+ENV
+
+# Environment
+.env
+.env.*
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+
+# Tests
+tests
+*.test.py
+.pytest_cache
+.coverage
+htmlcov
+
+# Documentation
+README.md
+docs
+
+# Misc
+.DS_Store
+*.log

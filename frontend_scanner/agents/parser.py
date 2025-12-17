@@ -117,8 +117,11 @@ class ParserAgent:
                 parsed.env_vars = self._extract_env_vars(content)
                 parsed.imports = self._extract_imports_regex(content)
             
+            # Extract routes based on framework
             if parsed.framework == "nextjs":
                 parsed.routes = self._extract_nextjs_routes(path)
+            elif parsed.framework == "react":
+                parsed.routes = self._extract_react_router_routes(content)
             
             parsed.ast_summary = self._generate_ast_summary(parsed)
             
@@ -298,6 +301,23 @@ class ParserAgent:
             route = route.replace('.js', '').replace('.tsx', '').replace('.jsx', '').replace('.ts', '')
             route = '/' + route.strip('/')
             routes.append(route)
+        
+        return routes
+    
+    def _extract_react_router_routes(self, content: str) -> List[str]:
+        """Extract routes from React Router configuration."""
+        import re
+        routes = []
+        
+        # Match <Route path="..." />
+        pattern = r'<Route\s+path=["\'](.*?)["\']'
+        matches = re.findall(pattern, content)
+        routes.extend(matches)
+        
+        # Match routes object/array patterns: path: "..." or "path": "..."
+        pattern2 = r'["\']?path["\']?\s*:\s*["\']([^"\']+)["\']'
+        matches2 = re.findall(pattern2, content)
+        routes.extend(matches2)
         
         return routes
     

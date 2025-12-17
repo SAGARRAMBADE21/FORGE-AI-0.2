@@ -62,7 +62,7 @@ class ScannerConfig(BaseModel):
     vector_store: VectorStoreConfig = Field(default_factory=VectorStoreConfig)
     chunking: ChunkingConfig = Field(default_factory=ChunkingConfig)
     security: SecurityConfig = Field(default_factory=SecurityConfig)
-    max_file_size_mb: int = 10
+    max_file_size_mb: int = 100
     supported_extensions: List[str] = Field(default_factory=lambda: [
         ".js", ".jsx", ".ts", ".tsx", ".vue", ".svelte",
         ".html", ".css", ".json", ".yaml", ".yml"

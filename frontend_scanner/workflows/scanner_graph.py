@@ -80,6 +80,15 @@ def create_scanner_workflow(config):
         parsed_files = []
         all_chunks = []
         
+        # Check if file_inventory exists
+        if not state.get("file_inventory"):
+            print("⚠ No file inventory found")
+            return {
+                "parsed_files": [],
+                "chunks": [],
+                "logs": ["No files to process"]
+            }
+        
         file_count = 0
         for file_meta in state["file_inventory"].files:
             if file_meta.is_binary:
@@ -124,9 +133,17 @@ def create_scanner_workflow(config):
         print("🔒 STEP 3: Redactor - Sanitizing sensitive data")
         print("="*60)
         
+        chunks_to_process = state.get("chunks", [])
+        if not chunks_to_process:
+            print("⚠ No chunks to redact")
+            return {
+                "chunks": [],
+                "logs": ["No chunks to redact"]
+            }
+        
         redacted_chunks = []
         
-        for chunk in state["chunks"]:
+        for chunk in chunks_to_process:
             redacted = redactor.redact(chunk)
             redacted_chunks.append(redacted)
         
@@ -143,7 +160,15 @@ def create_scanner_workflow(config):
         print("🧠 STEP 4: Embedder - Generating vector embeddings")
         print("="*60)
         
-        embeddings = embedder.embed_chunks(state["chunks"])
+        chunks_to_embed = state.get("chunks", [])
+        if not chunks_to_embed:
+            print("⚠ No chunks to embed")
+            return {
+                "embeddings": [],
+                "logs": ["No chunks to embed"]
+            }
+        
+        embeddings = embedder.embed_chunks(chunks_to_embed)
         
         return {
             "embeddings": embeddings,

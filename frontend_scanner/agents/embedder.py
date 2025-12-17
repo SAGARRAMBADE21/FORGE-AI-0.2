@@ -63,6 +63,10 @@ class EmbedderAgent:
     
     def embed_chunks(self, chunks: List[Any]) -> List[ChunkEmbedding]:
         """Generate embeddings for all chunks."""
+        if not chunks:
+            print("No chunks provided for embedding")
+            return []
+        
         if not self.embedder:
             print("Warning: No embedder available. Returning empty embeddings.")
             return []
@@ -74,7 +78,7 @@ class EmbedderAgent:
         
         for i in range(0, len(chunks), batch_size):
             batch = chunks[i:i + batch_size]
-            texts = [chunk.content for chunk in batch]
+            texts = [getattr(chunk, 'content', '') for chunk in batch if chunk]
             
             try:
                 batch_embeddings = self.embedder.embed_documents(texts)

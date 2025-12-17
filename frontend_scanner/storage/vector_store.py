@@ -79,12 +79,17 @@ class ChromaVectorStore(VectorStore):
             # Convert non-string values to strings for Chroma
             clean_metadata = {}
             for k, v in full_metadata.items():
-                if isinstance(v, (str, int, float, bool)):
-                    clean_metadata[k] = v
-                elif isinstance(v, (list, dict)):
-                    clean_metadata[k] = str(v)
-                else:
-                    clean_metadata[k] = str(v)
+                if v is None:
+                    continue
+                try:
+                    if isinstance(v, (str, int, float, bool)):
+                        clean_metadata[k] = v
+                    elif isinstance(v, (list, dict)):
+                        clean_metadata[k] = str(v)
+                    else:
+                        clean_metadata[k] = str(v)
+                except Exception:
+                    continue
             
             self.collection.add(
                 ids=[chunk_id],

@@ -110,28 +110,37 @@ class IndexerAgent:
                 print(f"Error processing {parsed.file_path}: {e}")
                 continue
         
+        # Safely get project summary attributes
+        framework = None
+        suggested_endpoints = []
+        architecture = "Unknown"
+        
+        if project_summary and hasattr(project_summary, 'framework'):
+            framework = project_summary.framework
+        if project_summary and hasattr(project_summary, 'suggested_backend_endpoints'):
+            suggested_endpoints = project_summary.suggested_backend_endpoints or []
+        if project_summary and hasattr(project_summary, 'architecture'):
+            architecture = project_summary.architecture
+        
         manifest = Manifest(
             project_root=str(self.config.project_root),
             scan_timestamp=datetime.now().isoformat(),
-            framework=project_summary.framework if project_summary else None,
+            framework=framework,
             routes=list(set(routes)),
             pages=pages,
             components=components[:50],
             api_calls=list(api_calls)[:20],
-            suggested_backend_endpoints=(
-                project_summary.suggested_backend_endpoints 
-                if project_summary else []
-            ),
+            suggested_backend_endpoints=suggested_endpoints,
             integration_hints={
-                "detected_framework": project_summary.framework if project_summary else None,
+                "detected_framework": framework,
                 "total_components": len(components),
                 "total_routes": len(routes),
-                "architecture": project_summary.architecture if project_summary else "Unknown"
+                "architecture": architecture
             },
             file_inventory={
-                "total_files": file_inventory.total_files,
-                "total_size_bytes": file_inventory.total_size_bytes,
-                "scan_timestamp": file_inventory.scan_timestamp
+                "total_files": file_inventory.total_files if file_inventory else 0,
+                "total_size_bytes": file_inventory.total_size_bytes if file_inventory else 0,
+                "scan_timestamp": file_inventory.scan_timestamp if file_inventory else datetime.now().isoformat()
             }
         )
         

@@ -50,14 +50,16 @@ class SummarizerAgent:
         
         if LLM_AVAILABLE:
             try:
-                api_key = os.getenv("OPENAI_API_KEY")
-                if api_key:
+                api_key = os.getenv("OPENAI_API_KEY", "")
+                # Check if it's a valid API key (not placeholder)
+                if api_key and len(api_key) > 20 and not api_key.startswith("sk-your-"):
                     self.llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
                     print("✓ Initialized LLM for summarization")
                 else:
-                    print("Warning: OPENAI_API_KEY not set. Summaries will be basic.")
+                    print("Warning: OPENAI_API_KEY not set or invalid. Summaries will be basic.")
             except Exception as e:
-                print(f"Error initializing LLM: {e}")
+                print(f"Warning: Could not initialize LLM: {e}")
+                self.llm = None
     
     def generate_summaries(self, parsed_files: List[Any], chunks: List[Any]) -> Dict[str, Any]:
         """Generate file, folder, and project summaries."""
@@ -86,6 +88,9 @@ class SummarizerAgent:
                 continue
             
             try:
+                if not hasattr(parsed, 'file_path'):
+                    continue
+                
                 # Basic summary without LLM
                 purpose = self._generate_basic_summary(parsed)
                 
@@ -94,7 +99,7 @@ class SummarizerAgent:
                     try:
                         purpose = self._generate_llm_summary(parsed)
                     except Exception as e:
-                        print(f"LLM summary failed for {parsed.file_path}, using basic: {e}")
+                        print(f"LLM summary failed for {getattr(parsed, 'file_path', 'unknown')}, using basic: {e}")
                 
                 summaries.append(FileSummary(
                     file_path=parsed.file_path,
@@ -152,7 +157,9 @@ class SummarizerAgent:
             )
         )
         
-        return response.content[:200]
+        if hasattr(response, 'content') and response.content:
+            return str(response.content)[:200]
+        return "No description available"
     
     def _generate_folder_summaries(self, file_summaries: List[FileSummary]) -> List[FolderSummary]:
         """Generate summary for each folder."""
@@ -194,8 +201,8 @@ class SummarizerAgent:
         
         all_api_calls = []
         for parsed in parsed_files:
-            if parsed:
-                all_api_calls.extend([call.get("url", "") for call in parsed.api_calls])
+            if parsed and hasattr(parsed, 'api_calls'):
+                all_api_calls.extend([call.get("url", "") for call in (parsed.api_calls or [])])
         
         api_endpoints = self._extract_api_endpoints(all_api_calls)
         suggested = self._suggest_backend_endpoints(api_endpoints)

@@ -46,14 +46,17 @@ class ExporterAgent:
             
             export_data = {
                 "file_summaries": [
-                    s.model_dump() for s in summaries.get("file_summaries", [])
+                    s.model_dump() if hasattr(s, 'model_dump') else dict(s) 
+                    for s in summaries.get("file_summaries", [])
                 ],
                 "folder_summaries": [
-                    s.model_dump() for s in summaries.get("folder_summaries", [])
+                    s.model_dump() if hasattr(s, 'model_dump') else dict(s)
+                    for s in summaries.get("folder_summaries", [])
                 ],
                 "project_summary": (
                     summaries.get("project_summary").model_dump()
-                    if summaries.get("project_summary") else {}
+                    if summaries.get("project_summary") and hasattr(summaries.get("project_summary"), 'model_dump')
+                    else {}
                 )
             }
             

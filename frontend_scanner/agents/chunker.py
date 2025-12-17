@@ -66,8 +66,14 @@ class ChunkerAgent:
         if not lines:
             return chunks
         
+        if not hasattr(parsed_file, 'components') or not parsed_file.components:
+            return self._chunk_by_tokens(parsed_file, content)
+        
         for i, component in enumerate(parsed_file.components):
             try:
+                if not hasattr(component, 'start_line') or not hasattr(component, 'end_line'):
+                    continue
+                
                 start_line = max(0, component.start_line)
                 end_line = min(len(lines), component.end_line + 1)
                 
@@ -241,7 +247,7 @@ class ChunkerAgent:
                         token_count=current_tokens,
                         chunk_type="component",
                         language=language,
-                        metadata={"component_name": component.name, "split": True},
+                        metadata={"component_name": getattr(component, 'name', 'unknown'), "split": True},
                         provenance={
                             "file": file_path,
                             "lines": f"{start_line + chunk_start}-{start_line + i}",
@@ -264,7 +270,7 @@ class ChunkerAgent:
                 token_count=current_tokens,
                 chunk_type="component",
                 language=language,
-                metadata={"component_name": component.name, "split": True},
+                metadata={"component_name": getattr(component, 'name', 'unknown'), "split": True},
                 provenance={
                     "file": file_path,
                     "lines": f"{start_line + chunk_start}-{start_line + len(lines)}",
